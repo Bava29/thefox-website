@@ -253,7 +253,7 @@ h4,
     margin-top: 20px;
     padding-bottom: 20px;
     padding-top: 90px;
-    background: url("images/hero.jpg") center/cover no-repeat;
+    background: url("../images/Hero.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -2227,4 +2227,5 @@ h4,
     .contact-btn {
         width: 100%;
     }
+
 }
