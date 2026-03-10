@@ -1,0 +1,135 @@
+console.log("JS WORKING");
+
+/* CONTACT CARD ANIMATION */
+
+const contactImage = document.querySelector(".contact-left");
+const contactForm = document.querySelector(".contact-right");
+
+window.addEventListener("load", function () {
+
+    contactImage.classList.add("contact-show");
+    contactForm.classList.add("contact-show");
+
+});
+
+/* CONTACT INFO REVEAL */
+
+const infoBoxes = document.querySelectorAll(".contact-info-box");
+
+function revealContactInfo() {
+
+    infoBoxes.forEach(function (box, index) {
+
+        const boxTop = box.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (boxTop < windowHeight - 120) {
+
+            setTimeout(function () {
+                box.classList.add("contact-info-show");
+            }, index * 200);
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealContactInfo);
+
+/* INPUT FOCUS EFFECT */
+
+const contactInputs = document.querySelectorAll(".contact-right input, .contact-right textarea");
+
+contactInputs.forEach(function (input) {
+
+    input.addEventListener("focus", function () {
+        input.style.borderBottom = "2px solid #3bb3a3";
+    });
+
+    input.addEventListener("blur", function () {
+        input.style.borderBottom = "1px solid #ccc";
+    });
+
+});
+
+/* CONTACT DETAILS REVEAL */
+
+const detailsLeft = document.querySelector(".contact-details-left");
+const detailsMap = document.querySelector(".contact-map");
+
+function revealContactDetails() {
+
+    const position = detailsLeft.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 120) {
+
+        detailsLeft.classList.add("contact-details-show");
+        detailsMap.classList.add("contact-details-show");
+
+    }
+
+}
+
+window.addEventListener("scroll", revealContactDetails);
+
+/* MAP ZOOM EFFECT */
+
+const contactMap = document.querySelector(".contact-map iframe");
+
+contactMap.addEventListener("mouseenter", function () {
+    contactMap.style.transform = "scale(1.03)";
+    contactMap.style.transition = "0.4s";
+});
+
+contactMap.addEventListener("mouseleave", function () {
+    contactMap.style.transform = "scale(1)";
+});
+
+/* SCROLL UP BUTTON */
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+
+});
+
+scrollBtn.addEventListener("click", function () {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+/* DARK MODE */
+
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
+
+
+/* RTL MODE */
+
+const rtlBtn = document.getElementById("rtl-toggle");
+
+rtlBtn.addEventListener("click", () => {
+
+    if (document.documentElement.dir === "rtl") {
+        document.documentElement.dir = "ltr";
+    } else {
+        document.documentElement.dir = "rtl";
+    }
+
+});
+
