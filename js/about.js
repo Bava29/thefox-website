@@ -72,6 +72,18 @@ function revealClients() {
 
 window.addEventListener("scroll", revealClients);
 
+window.addEventListener("scroll", function () {
+
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const scrollPercent = (scrollTop / height) * 100;
+
+    document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+
+});
+
+
 /* SCROLL UP BUTTON */
 
 const scrollBtn = document.getElementById("scrollTopBtn");
@@ -118,3 +130,16 @@ rtlBtn.addEventListener("click", () => {
 
 });
 
+
+//SCROLL PROGRESS
+
+window.addEventListener("scroll", function () {
+
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const scrollPercent = (scrollTop / height) * 100;
+
+    document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+
+});

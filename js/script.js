@@ -349,27 +349,19 @@ window.addEventListener("scroll", () => {
 
 const contactSection = document.querySelector(".reveal-contact");
 
-window.addEventListener("scroll", () => {
-    const trigger = window.innerHeight * 0.85;
+function revealContact() {
+    const windowHeight = window.innerHeight;
+    const revealTop = contactSection.getBoundingClientRect().top;
 
-    if (contactSection.getBoundingClientRect().top < trigger) {
+    if (revealTop < windowHeight - 100) {
         contactSection.classList.add("active");
     }
-});
-
-
-
-function showAbout() {
-    document.getElementById("home-page").style.display = "none";
-    document.getElementById("about-page").style.display = "block";
-    window.scrollTo(0, 0);
 }
 
-function goHome() {
-    document.getElementById("about-page").style.display = "none";
-    document.getElementById("home-page").style.display = "block";
-    window.scrollTo(0, 0);
-}
+window.addEventListener("scroll", revealContact);
+
+
+
 
 // TYPING EFFECT FUNCTION IN CONTACT SECTION 
 
@@ -479,3 +471,16 @@ if (footerLogo) {
         });
     });
 }
+
+//SCROLL PROGRESS
+
+window.addEventListener("scroll", function () {
+
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const scrollPercent = (scrollTop / height) * 100;
+
+    document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+
+});
