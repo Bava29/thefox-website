@@ -17,7 +17,7 @@
     <div class="main">
         <div class="global-container">
             <!-- HEADER TOP-->
-            <div id="home" class="top-bar">
+            <div class="top-bar">
                 <div class="top-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -34,16 +34,13 @@
             <!-- HEADER -->
             <header class="top-header">
                 <nav class="nav-left">
-                    <button id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html" class="active">About</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                     </ul>
                 </nav>
-                <a href="index.html#home" class="logo">
+                <a href="index.html" class="logo">
                     <img src="images/logo.png" alt="logo">
                     <span class="logo-text">THEFOX</span>
                 </a>
@@ -53,6 +50,9 @@
                         <li><a href="skills.html">Skills</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                    <button id="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
                     <button id="rtl-toggle">
                         <i class="fa-solid fa-right-left"></i>
                     </button>
@@ -61,10 +61,10 @@
             <!-- ABOUT HER0 SECTION -->
             <section class="about-hero">
                 <div class="about-hero-content">
-                    <h3>Hello, I'am</h3>
-                    <h1>TRANMAUTRITAM</h1>
-                    <p class="about-sub">I design and build modern websites</p>
-                    <button class="aboutme-btn">Get in Touch</button>
+                    <h3 class="hero-item">Hello, I'am</h3>
+                    <h1 class="hero-item hero-name">TRANMAUTRITAM</h1>
+                    <p class="about-sub hero-item">I design and build modern websites</p>
+                    <button class="aboutme-btn hero-item">Get in Touch</button>
                 </div>
             </section>
             <!-- STATS SECTION -->
@@ -96,7 +96,7 @@
 
                     <div class="strengths-grid">
 
-                        <div class="strength-box">
+                        <div class="strength-box slide-left">
                             <h3>Ambition</h3>
                             <p>
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -104,7 +104,7 @@
                             </p>
                         </div>
 
-                        <div class="strength-box">
+                        <div class="strength-box slide-up">
                             <h3>Precision</h3>
                             <p>
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -112,17 +112,18 @@
                             </p>
                         </div>
 
-                        <div class="strength-box">
+                        <div class="strength-box slide-right">
                             <h3>Assertive</h3>
                             <p>
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                 aliquip ex ea commodo consequat.
                             </p>
                         </div>
+
                     </div>
                 </div>
             </section>
-            <!-- ABOUTME SECTION -->
+            <!-- WHO AM I SECTION -->
             <section class="about-section">
                 <div class="about-container">
                     <div class="about-header">
@@ -340,7 +341,7 @@
             <!-- FOOTER TOP -->
             <section class="footer-top">
                 <div class="footer-box about-box">
-                    <a href="index.html#home" class="footer-logo">
+                    <a href="index.html" class="footer-logo">
                         <img src="images/logo 1.png" alt="TheFox Logo">
                     </a>
                     <h3>ABOUT THEFOX</h3>

@@ -17,7 +17,7 @@
     <div class="main">
         <div class="global-container">
             <!-- HEADER TOP -->
-            <div id="home" class="top-bar">
+            <div class="top-bar">
                 <div class="top-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -34,16 +34,13 @@
             <!-- HEADER -->
             <header class="top-header">
                 <nav class="nav-left">
-                    <button id="theme-toggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                     </ul>
                 </nav>
-                <a href="index.html#home" class="logo">
+                <a href="index.html" class="logo">
                     <img src="images/logo.png" alt="logo">
                     <span class="logo-text">THEFOX</span>
                 </a>
@@ -53,6 +50,9 @@
                         <li><a href="skills.html">Skills</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                    <button id="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
                     <button id="rtl-toggle">
                         <i class="fa-solid fa-right-left"></i>
                     </button>
@@ -64,22 +64,31 @@
                     <div class="hero-slide active">
                         <img src="images/hero1.jpg">
                         <div class="hero-content">
-                            <h1>LET’S BE <br><span>CREATIVE</span></h1>
-                            <p>I always make the best things</p>
+                            <h1>
+                                <span class="letsbe reveal-text">LET’S BE</span><br>
+                                <span class="creative reveal-text">CREATIVE</span>
+                            </h1>
+                            <p class="hero-sub">I always make the best things</p>
                         </div>
                     </div>
                     <div class="hero-slide">
                         <img src="images/hero1.jpg">
                         <div class="hero-content">
-                            <h1>MODERN <br><span>DESIGN</span></h1>
-                            <p>Clean and minimal UI</p>
+                            <h1>
+                                <span class="letsbe reveal-text">MODERN</span> <br>
+                                <span class="creative reveal-text">DESIGN</span>
+                            </h1>
+                            <p class="hero-sub">Clean and minimal UI</p>
                         </div>
                     </div>
                     <div class="hero-slide">
                         <img src="images/hero1.jpg">
                         <div class="hero-content">
-                            <h1>AWESOME <br><span>UX</span></h1>
-                            <p>Best user experience</p>
+                            <h1>
+                                <span class="letsbe reveal-text">AWESOME</span><br>
+                                <span class="creative reveal-text">UX</span>
+                            </h1>
+                            <p class="hero-sub">Best user experience</p>
                         </div>
                     </div>
                 </div>
@@ -96,14 +105,14 @@
                     </span>
                 </div>
                 <div class="about-line"></div>
-                <h2 class="about-title">ABOUT ME</h2>
+                <h2 class="about-title shine-text">ABOUT ME</h2>
                 <div class="about-line bottom"></div>
                 <div class="about-vertical-line"></div>
                 <div class="about-profile reveal-profile">
                     <img src="images/profile.jpg" alt="profile">
                 </div>
-                <h3 class="about-name">I AM TRANMAUTRITAM</h3>
-                <p class="about-text reveal-text">
+                <h3 class="about-name name-shine">I AM TRANMAUTRITAM</h3>
+                <p class="about-text ">
                     Aliquam pulvinar pellentesque surus, nec condimentum nibh.Aenean dapibus iacutis odio id
                     vestibulum
                     Nam at justo ante.Aenean hendrerit gravida ligula, id lacinia sapien tristique eget.In clit
@@ -128,11 +137,11 @@
                 <div class="services-top-icon">
                     <i class="fa-solid fa-brain"></i>
                 </div>
-                <div class="services-image">
+                <div class="services-image reveal-left">
                     <img src="images/profile 1.jpg" alt="profile">
                 </div>
-                <div class="services-content">
-                    <h2>I ALWAYS DO GREAT SERVICES</h2>
+                <div class="services-content reveal-right">
+                    <h2 class="services-shine">I ALWAYS DO GREAT SERVICES</h2>
 
                     <div class="services-item">
                         <span>
@@ -197,7 +206,7 @@
                         <i class="fa-solid fa-briefcase"></i>
                     </span>
                 </div>
-                <h2 class="work-title">
+                <h2 class="work-title reveal bottom">
                     I HARDWORK EVERY DAY <br>
                     STRIVE TO CREATE THE BEST VALUE
                 </h2>
@@ -381,11 +390,14 @@
                     <div class="testimonial-slider">
 
                         <div class="testimonial-slide active">
-                            <h2>
+                            <h2 class="reveal-up">
+
                                 I THINK THIS IS THE BEST PSD ON THEMEFOREST.
                                 THERE ARE JUST SO MANY IDEAS...
                             </h2>
-                            <p class="author">SAM ISBISTER - MASS IMPRESSIONS</p>
+                            <p class="author reveal-up">
+                                SAM ISBISTER - MASS IMPRESSIONS
+                            </p>
                         </div>
 
                         <div class="testimonial-slide">
@@ -529,10 +541,10 @@
             <section class="featured-section">
                 <div class="featured-slider">
                     <div class="featured-slide active">
-                        <div class="featured-image">
+                        <div class="featured-image reveal-left">
                             <img src="images/a4-mockup.jpg">
                         </div>
-                        <div class="featured-content">
+                        <div class="featured-content reveal-right">
                             <h2>FEATURED ITEMS</h2>
                             <p> Aliquam pulvinar pellentesque purus, nec condimentum nibh. Aenean dapibus
                                 iaculis
@@ -800,7 +812,7 @@
             <!-- FOOTER TOP -->
             <section class="footer-top">
                 <div class="footer-box about-box">
-                    <a href="#home" class="footer-logo" id="footerHomeLogo">
+                    <a href="index.html" class="footer-logo">
                         <img src="images/logo 1.png" alt="TheFox Logo">
                     </a>
                     <h3>ABOUT THEFOX</h3>
