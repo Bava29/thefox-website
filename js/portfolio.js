@@ -197,3 +197,4 @@ window.addEventListener("scroll", function () {
     document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
 
 });
+

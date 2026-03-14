@@ -29,6 +29,27 @@ window.addEventListener("scroll", () => {
     });
 });
 
+//STRENGTH SECTION
+
+const strengthItems = document.querySelectorAll(
+    ".slide-left, .slide-right, .slide-up"
+);
+
+window.addEventListener("scroll", () => {
+
+    strengthItems.forEach(item => {
+
+        const position = item.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (position < screenHeight - 120) {
+            item.classList.add("show");
+        }
+
+    });
+
+});
+
 //WORK SECTION
 const workItems = document.querySelectorAll(".work-animate");
 
@@ -82,6 +103,8 @@ window.addEventListener("scroll", function () {
     document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
 
 });
+
+
 
 
 /* SCROLL UP BUTTON */
@@ -143,3 +166,4 @@ window.addEventListener("scroll", function () {
     document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
 
 });
+

@@ -77,6 +77,23 @@ items.forEach(item => {
     });
 });
 
+const revealElements = document.querySelectorAll(".reveal-left, .reveal-right");
+
+window.addEventListener("scroll", () => {
+
+    revealElements.forEach(el => {
+
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 120) {
+            el.classList.add("reveal-active");
+        }
+
+    });
+
+});
+
 //PORTFOLIO SECTION
 const portfolioItems = document.querySelectorAll(".reveal");
 
@@ -94,6 +111,18 @@ window.addEventListener("scroll", () => {
     });
 });
 
+const workTitle = document.querySelector(".work-title");
+
+window.addEventListener("scroll", () => {
+
+    const elementTop = workTitle.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (elementTop < windowHeight - 120) {
+        workTitle.classList.add("show");
+    }
+
+});
 
 //TESTIMONAL SECTION
 
@@ -118,6 +147,22 @@ prevBtn.addEventListener("click", () => {
     showSlide(index);
 });
 
+const scrollAnimations = document.querySelectorAll(".reveal-up");
+
+window.addEventListener("scroll", function () {
+
+    scrollAnimations.forEach(function (element) {
+
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 100) {
+            element.classList.add("show");
+        }
+
+    });
+
+});
 
 //FEATURES SECTION
 
@@ -220,6 +265,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+const revealimages = document.querySelectorAll(".reveal-left, .reveal-right");
+
+window.addEventListener("scroll", () => {
+
+    revealItems.forEach(item => {
+
+        const elementTop = item.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 120) {
+            item.classList.add("reveal-active");
+        }
+
+    });
+
+});
+
+
 //FUNFACTS SECTION
 
 const counters = document.querySelectorAll(".counter");
@@ -484,3 +548,5 @@ window.addEventListener("scroll", function () {
     document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
 
 });
+
+
