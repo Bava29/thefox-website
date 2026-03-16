@@ -5,13 +5,18 @@ console.log("JS WORKING");
 const contactImage = document.querySelector(".contact-left");
 const contactForm = document.querySelector(".contact-right");
 
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    contactImage.classList.add("contact-show");
-    contactForm.classList.add("contact-show");
+    if (contactImage && contactForm) {
+
+        setTimeout(() => {
+            contactImage.classList.add("contact-show");
+            contactForm.classList.add("contact-show");
+        }, 50);
+
+    }
 
 });
-
 /* CONTACT INFO REVEAL */
 
 const infoBoxes = document.querySelectorAll(".contact-info-box");
@@ -37,21 +42,6 @@ function revealContactInfo() {
 
 window.addEventListener("scroll", revealContactInfo);
 
-/* INPUT FOCUS EFFECT */
-
-const contactInputs = document.querySelectorAll(".contact-right input, .contact-right textarea");
-
-contactInputs.forEach(function (input) {
-
-    input.addEventListener("focus", function () {
-        input.style.borderBottom = "2px solid #3bb3a3";
-    });
-
-    input.addEventListener("blur", function () {
-        input.style.borderBottom = "1px solid #ccc";
-    });
-
-});
 
 /* CONTACT DETAILS REVEAL */
 
@@ -114,26 +104,67 @@ scrollBtn.addEventListener("click", function () {
 
 /* DARK MODE */
 
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
 const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", () => {
+
     document.body.classList.toggle("dark-mode");
-});
 
-
-/* RTL MODE */
-
-const rtlBtn = document.getElementById("rtl-toggle");
-
-rtlBtn.addEventListener("click", () => {
-
-    if (document.documentElement.dir === "rtl") {
-        document.documentElement.dir = "ltr";
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
     } else {
-        document.documentElement.dir = "rtl";
+        localStorage.setItem("theme", "light");
     }
 
 });
+
+
+//RTL MODE
+
+const rtlToggle = document.getElementById("rtl-toggle");
+
+rtlToggle.addEventListener("click", () => {
+
+    const html = document.documentElement;
+
+    if (html.getAttribute("dir") === "rtl") {
+        html.setAttribute("dir", "ltr");
+        localStorage.setItem("direction", "ltr");
+        location.reload();
+    }
+    else {
+        html.setAttribute("dir", "rtl");
+        localStorage.setItem("direction", "rtl");
+        reverseText();
+    }
+
+});
+
+
+function reverseText() {
+
+    const elements = document.querySelectorAll("h1, h2, h3, h4 ,p");
+
+    elements.forEach(el => {
+
+        const words = el.textContent.trim().split(" ");
+        el.textContent = words.reverse().join(" ");
+
+    });
+
+}
+
+if (localStorage.getItem("direction") === "rtl") {
+
+    document.documentElement.setAttribute("dir", "rtl");
+    reverseText();
+
+}
+
 
 //SCROLL PROGRESS
 

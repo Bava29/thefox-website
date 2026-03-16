@@ -501,26 +501,107 @@ scrollBtn.addEventListener("click", function () {
 
 /* DARK MODE */
 
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
 const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", () => {
+
     document.body.classList.toggle("dark-mode");
-});
 
-
-/* RTL MODE */
-
-const rtlBtn = document.getElementById("rtl-toggle");
-
-rtlBtn.addEventListener("click", () => {
-
-    if (document.documentElement.dir === "rtl") {
-        document.documentElement.dir = "ltr";
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
     } else {
-        document.documentElement.dir = "rtl";
+        localStorage.setItem("theme", "light");
     }
 
 });
+
+//RTL MODE
+
+const rtlToggle = document.getElementById("rtl-toggle");
+
+rtlToggle.addEventListener("click", () => {
+
+    const html = document.documentElement;
+
+    if (html.getAttribute("dir") === "rtl") {
+        html.setAttribute("dir", "ltr");
+        localStorage.setItem("direction", "ltr");
+        location.reload();
+    }
+    else {
+        html.setAttribute("dir", "rtl");
+        localStorage.setItem("direction", "rtl");
+        reverseText();
+        updateHeroText();
+    }
+
+});
+
+function updateHeroText() {
+
+    const html = document.documentElement;
+
+    const letsbe = document.querySelectorAll(".letsbe");
+    const creative = document.querySelectorAll(".creative");
+    const heroSub = document.querySelectorAll(".hero-sub");
+
+    if (html.getAttribute("dir") === "rtl") {
+
+        letsbe[0].textContent = "BE LET'S";
+        creative[0].textContent = "CREATIVE";
+        heroSub[0].textContent = "things best the make always I";
+
+        letsbe[1].textContent = "MODERN";
+        creative[1].textContent = "DESIGN";
+        heroSub[1].textContent = "UI minimal and Clean";
+
+        letsbe[2].textContent = "AWESOME";
+        creative[2].textContent = "UX";
+        heroSub[2].textContent = "experience user Better";
+
+    } else {
+
+        letsbe[0].textContent = "LET’S BE";
+        creative[0].textContent = "CREATIVE";
+        heroSub[0].textContent = "I always make the best things";
+
+        letsbe[1].textContent = "MODERN";
+        creative[1].textContent = "DESIGN";
+        heroSub[1].textContent = "Clean and minimal UI";
+
+        letsbe[2].textContent = "AWESOME";
+        creative[2].textContent = "UX";
+        heroSub[2].textContent = "Best user experience";
+
+    }
+}
+
+
+function reverseText() {
+
+    const elements = document.querySelectorAll("h1, h2, h3, h4, p");
+
+    elements.forEach(el => {
+
+        const words = el.textContent.trim().split(" ");
+        el.textContent = words.reverse().join(" ");
+
+    });
+
+}
+
+if (localStorage.getItem("direction") === "rtl") {
+
+    document.documentElement.setAttribute("dir", "rtl");
+    reverseText();
+
+}
+
+
 
 //HOME PAGE FOOTER LOGO //
 const footerLogo = document.getElementById("footerHomeLogo");

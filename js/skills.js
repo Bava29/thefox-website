@@ -92,26 +92,7 @@ function revealTimeline() {
 
 window.addEventListener("scroll", revealTimeline);
 
-/* WORKFLOW SECTION */
 
-const workflowSteps = document.querySelectorAll(".workflow-step");
-
-function revealWorkflow() {
-
-    workflowSteps.forEach(function (step) {
-
-        const pos = step.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-
-        if (pos < screen - 120) {
-            step.classList.add("workflow-show");
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", revealWorkflow);
 
 /* VISUAL SECTION */
 
@@ -163,26 +144,67 @@ scrollBtn.addEventListener("click", function () {
 
 /* DARK MODE */
 
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
 const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", () => {
+
     document.body.classList.toggle("dark-mode");
-});
 
-
-/* RTL MODE */
-
-const rtlBtn = document.getElementById("rtl-toggle");
-
-rtlBtn.addEventListener("click", () => {
-
-    if (document.documentElement.dir === "rtl") {
-        document.documentElement.dir = "ltr";
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
     } else {
-        document.documentElement.dir = "rtl";
+        localStorage.setItem("theme", "light");
     }
 
 });
+
+
+//RTL MODE
+
+const rtlToggle = document.getElementById("rtl-toggle");
+
+rtlToggle.addEventListener("click", () => {
+
+    const html = document.documentElement;
+
+    if (html.getAttribute("dir") === "rtl") {
+        html.setAttribute("dir", "ltr");
+        localStorage.setItem("direction", "ltr");
+        location.reload();
+    }
+    else {
+        html.setAttribute("dir", "rtl");
+        localStorage.setItem("direction", "rtl");
+        reverseText();
+    }
+
+});
+
+
+function reverseText() {
+
+    const elements = document.querySelectorAll("h1, h2, h3, h4 ,p");
+
+    elements.forEach(el => {
+
+        const words = el.textContent.trim().split(" ");
+        el.textContent = words.reverse().join(" ");
+
+    });
+
+}
+
+if (localStorage.getItem("direction") === "rtl") {
+
+    document.documentElement.setAttribute("dir", "rtl");
+    reverseText();
+
+}
+
 
 //SCROLL PROGRESS
 

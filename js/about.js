@@ -51,6 +51,7 @@ window.addEventListener("scroll", () => {
 });
 
 //WORK SECTION
+
 const workItems = document.querySelectorAll(".work-animate");
 
 window.addEventListener("scroll", () => {
@@ -105,8 +106,6 @@ window.addEventListener("scroll", function () {
 });
 
 
-
-
 /* SCROLL UP BUTTON */
 
 const scrollBtn = document.getElementById("scrollTopBtn");
@@ -132,26 +131,65 @@ scrollBtn.addEventListener("click", function () {
 
 /* DARK MODE */
 
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
 const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", () => {
+
     document.body.classList.toggle("dark-mode");
-});
 
-
-/* RTL MODE */
-
-const rtlBtn = document.getElementById("rtl-toggle");
-
-rtlBtn.addEventListener("click", () => {
-
-    if (document.documentElement.dir === "rtl") {
-        document.documentElement.dir = "ltr";
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
     } else {
-        document.documentElement.dir = "rtl";
+        localStorage.setItem("theme", "light");
     }
 
 });
+
+//RTL MODE
+
+const rtlToggle = document.getElementById("rtl-toggle");
+
+rtlToggle.addEventListener("click", () => {
+
+    const html = document.documentElement;
+
+    if (html.getAttribute("dir") === "rtl") {
+        html.setAttribute("dir", "ltr");
+        localStorage.setItem("direction", "ltr");
+        location.reload();
+    }
+    else {
+        html.setAttribute("dir", "rtl");
+        localStorage.setItem("direction", "rtl");
+        reverseText();
+    }
+
+});
+
+
+function reverseText() {
+
+    const elements = document.querySelectorAll("h1, h2, h3, h4 ,p");
+
+    elements.forEach(el => {
+
+        const words = el.textContent.trim().split(" ");
+        el.textContent = words.reverse().join(" ");
+
+    });
+
+}
+
+if (localStorage.getItem("direction") === "rtl") {
+
+    document.documentElement.setAttribute("dir", "rtl");
+    reverseText();
+
+}
 
 
 //SCROLL PROGRESS
