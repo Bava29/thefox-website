@@ -104,10 +104,6 @@ scrollBtn.addEventListener("click", function () {
 
 /* DARK MODE */
 
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-}
-
 const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", () => {
@@ -121,6 +117,10 @@ themeToggle.addEventListener("click", () => {
     }
 
 });
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
 
 
 //RTL MODE
