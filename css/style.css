@@ -1377,6 +1377,7 @@ h7,
     font-size: 26px;
 }
 
+
 /* QUOTE SECTION */
 
 .quote-section {
@@ -5093,6 +5094,111 @@ body.dark-mode .featured-next:hover {
 body.dark-mode .news-card h4 {
     color: #e5e7eb;
 }
+
+body.dark-mode .quote-section {
+    background: linear-gradient(to bottom, #0f1b2b, #132f46);
+}
+
+body.dark-mode .quote-text {
+    color: #e5e7eb;
+}
+
+body.dark-mode .quote-author {
+    color: #9ca3af;
+}
+
+body.dark-mode .quote-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .quote-icon i {
+    color: #ffffff;
+}
+
+body.dark-mode .about-top-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .about-top-icon i {
+    color: #ffffff;
+}
+
+
+body.dark-mode .services-top-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .services-top-icon i {
+    color: #ffffff;
+}
+
+body.dark-mode .work-top-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .work-top-icon i {
+    color: #ffffff;
+}
+
+body.dark-mode .testimonial-top-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .testimonial-top-icon i {
+    color: #ffffff;
+}
+
+body.dark-mode .testimonial-bottom-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .testimonial-bottom-icon i {
+    color: #ffffff;
+}
+
+
+body.dark-mode .pricing-top-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .pricing-top-icon i {
+    color: #ffffff;
+}
+
+body.dark-mode .pricing-bottom-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .pricing-bottom-icon i {
+    color: #ffffff;
+}
+
+body.dark-mode .funfacts-top-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .funfacts-top-icon i {
+    color: #ffffff;
+}
+
+body.dark-mode .hire-top-icon {
+    background: #3bb3a3;
+    border: 10px solid #0f172a;
+}
+
+body.dark-mode .hire-top-icon i {
+    color: #ffffff;
+}
+
 
 /* ABOUT ME PAGE */
 
