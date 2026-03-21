@@ -222,19 +222,16 @@ function reverseText() {
     });
 
 }
+
 function reversePortfolioTitle() {
+    const first = document.querySelector(".portfolio-title .first");
+    const second = document.querySelector(".portfolio-title .second");
 
-    const title = document.querySelector(".portfolio-white h1");
-    if (!title) return;
+    if (!first || !second) return;
 
-    const span = title.querySelector("span");
-
-    const firstWord = title.childNodes[0].textContent.trim();
-    const secondWord = span.textContent.trim();
-
-    title.childNodes[0].textContent = secondWord + " ";
-    span.textContent = firstWord;
-
+    const temp = first.textContent;
+    first.textContent = second.textContent;
+    second.textContent = temp;
 }
 
 if (localStorage.getItem("direction") === "rtl") {
@@ -263,7 +260,6 @@ window.addEventListener("scroll", function () {
 
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".mobile-menu");
-
 toggle.addEventListener("click", () => {
     menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 });
@@ -306,50 +302,10 @@ rtlToggleMobile.addEventListener("click", () => {
         html.setAttribute("dir", "rtl");
         localStorage.setItem("direction", "rtl");
         reverseText();
-        updateHeroText();
+        reversePortfolioTitle();
     }
 
 });
-
-function updateHeroText() {
-
-    const html = document.documentElement;
-
-    const letsbe = document.querySelectorAll(".letsbe");
-    const creative = document.querySelectorAll(".creative");
-    const heroSub = document.querySelectorAll(".hero-sub");
-
-    if (html.getAttribute("dir") === "rtl") {
-
-        letsbe[0].textContent = "BE LET'S";
-        creative[0].textContent = "CREATIVE";
-        heroSub[0].textContent = "things best the make always I";
-
-        letsbe[1].textContent = "MODERN";
-        creative[1].textContent = "DESIGN";
-        heroSub[1].textContent = "UI minimal and Clean";
-
-        letsbe[2].textContent = "AWESOME";
-        creative[2].textContent = "UX";
-        heroSub[2].textContent = "experience user Better";
-
-    } else {
-
-        letsbe[0].textContent = "LET’S BE";
-        creative[0].textContent = "CREATIVE";
-        heroSub[0].textContent = "I always make the best things";
-
-        letsbe[1].textContent = "MODERN";
-        creative[1].textContent = "DESIGN";
-        heroSub[1].textContent = "Clean and minimal UI";
-
-        letsbe[2].textContent = "AWESOME";
-        creative[2].textContent = "UX";
-        heroSub[2].textContent = "Best user experience";
-
-    }
-}
-
 
 function reverseText() {
 
@@ -364,10 +320,23 @@ function reverseText() {
 
 }
 
+function reversePortfolioTitle() {
+    const title = document.querySelector(".portfolio-white h1");
+    const span = title.querySelector("span");
+
+    if (!title || !span) return;
+
+    const firstWord = title.textContent.replace(span.textContent, "").trim();
+    const secondWord = span.textContent.trim();
+
+    title.innerHTML = `<span>${firstWord}</span> ${secondWord}`;
+}
+
 if (localStorage.getItem("direction") === "rtl") {
 
     document.documentElement.setAttribute("dir", "rtl");
     reverseText();
+    reversePortfolioTitle();
 
 }
 
