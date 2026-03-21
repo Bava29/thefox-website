@@ -4781,7 +4781,6 @@ h7,
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-
 /* DETAILS PAGE ANIMATIONS */
 
 .overview-item {
@@ -5012,6 +5011,16 @@ h7,
 body.dark-mode {
     background: #020617;
     color: #e5e7eb;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode p {
+    color: #9ca3af;
 }
 
 body,
@@ -5245,6 +5254,16 @@ body.dark-mode .service-offer-card h3 {
 
 body.dark-mode .service-offer-card p {
     color: #9ca3af;
+}
+
+body.dark-mode .service-offer-card:hover {
+    background: #1f2937;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .service-offer-card {
+    background: #111827;
 }
 
 body.dark-mode .testimonial {
@@ -5763,8 +5782,6 @@ html[dir="rtl"] .logo {
     text-align: inherit;
 }
 
-/* RTL SERVICES ALIGNMENT */
-/* RTL SERVICES ALIGNMENT */
 
 html[dir="rtl"] .service-offer {
     direction: rtl;
@@ -5772,7 +5789,6 @@ html[dir="rtl"] .service-offer {
 
 html[dir="rtl"] .service-offer-card {
     align-items: flex-start;
-    /* move icon + content to right */
     text-align: right;
 }
 
@@ -5786,7 +5802,6 @@ html[dir="rtl"] .service-offer-card p {
 
 html[dir="rtl"] .service-icon {
     align-self: flex-start;
-    /* icon moves to right side */
 }
 
 
