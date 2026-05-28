@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <title>The Fox </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons -->
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="images/logo.png" alt="logo">
+                <span>THEFOX</span>
+
+            </a>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="dashboardproject.html">
+                    <i class='bx bx-code-alt'></i>
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardskills.html">
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    Skills
+                </a>
+            </li>
+            <li>
+                <a href="dashboardachievements.html">
+                    <i class='bx bx-trophy'></i>
+                    Achievements
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardanalytics.html">
+                    <i class='bx bx-line-chart'></i>
+                    Analytics
+                </a>
+            </li>
+        </ul>
+        <div class="logout">
+
+            <a href="login.html" data-logout>
+
+                <i class='bx bx-log-out'></i>
+                Logout
+
+            </a>
+
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Projects</h1>
+
+            <div class="topbar-right">
+
+                <!-- DARK MODE -->
+
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <!-- RTL MODE -->
+
+                <button id="rtl-toggle" class="rtl-btn" aria-label="Toggle RTL">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                </button>
+
+                <!-- PROFILE -->
+
+                <a class="profile-chip" href="#" aria-label="Profile">
+
+                    <div class="profile-meta">
+                        <div class="profile-name">Bava</div>
+                        <div class="profile-plan">Code Nexus</div>
+                    </div>
+
+                    <div class="profile-avatar" aria-hidden="true">
+                        <img src="images/about.png" alt="Profile">
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- FEATURED PROJECTS -->
+
+        <div class="dashboard-projects">
+
+            <!-- PROJECT CARD 1 -->
+
+            <div class="dashboard-project-card">
+
+                <img src="images/featured1.jpg" alt="The Fox Portfolio project preview">
+
+                <div class="project-content">
+
+                    <div class="project-tag">
+
+                        Frontend Project
+
+                    </div>
+
+                    <h3>The Fox Portfolio</h3>
+
+                    <p>
+                        Modern creative portfolio website with smooth animations and responsive design.
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+                    <div class="project-buttons">
+
+                        <a href="#" class="live-btn">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="#" class="github-btn">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT CARD 2 -->
+
+            <div class="dashboard-project-card">
+
+                <img src="images/featured2.jpg" alt="FunPlay Kids website preview">
+
+                <div class="project-content">
+
+                    <div class="project-tag">
+
+                        Kids Website
+
+                    </div>
+
+                    <h3>FunPlay Kids</h3>
+
+                    <p>
+                        Interactive kids learning website with colorful and Elegant UI and engaging sections.
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Responsive</span>
+                        <span>UI/UX</span>
+                        <span>Frontend</span>
+
+                    </div>
+
+                    <div class="project-buttons">
+
+                        <a href="#" class="live-btn">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="#" class="github-btn">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT CARD 3 -->
+
+            <div class="dashboard-project-card">
+
+                <img src="images/featured3.jpg" alt="Creative Dashboard interface preview">
+
+                <div class="project-content">
+
+                    <div class="project-tag">
+
+                        Dashboard UI
+
+                    </div>
+
+                    <h3>Creative Dashboard</h3>
+
+                    <p>
+                        Premium and modern dashboard interface creatively designed for developers and creators.
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Dashboard</span>
+                        <span>UI Design</span>
+                        <span>Modern</span>
+
+                    </div>
+
+                    <div class="project-buttons">
+
+                        <a href="#" class="live-btn">
+
+                            Live Demo
+
+                        </a>
+
+                        <a href="#" class="github-btn">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- PROJECT STATS -->
+
+        <div class="project-stats-section">
+
+            <!-- STAT 1 -->
+
+            <div class="project-stat-card">
+
+                <div class="stat-icon">
+
+                    <i class='bx bx-world'></i>
+
+                </div>
+
+                <div>
+
+                    <h3>12K+</h3>
+
+                    <p>Total Visitors</p>
+
+                </div>
+
+            </div>
+
+            <!-- STAT 2 -->
+
+            <div class="project-stat-card">
+
+                <div class="stat-icon">
+
+                    <i class='bx bx-code-block'></i>
+
+                </div>
+
+                <div>
+
+                    <h3>15+</h3>
+
+                    <p>Projects Completed</p>
+
+                </div>
+
+            </div>
+
+            <!-- STAT 3 -->
+
+            <div class="project-stat-card">
+
+                <div class="stat-icon">
+
+                    <i class='bx bx-time-five'></i>
+
+                </div>
+
+                <div>
+
+                    <h3>500+</h3>
+
+                    <p>Learning Hours</p>
+
+                </div>
+
+            </div>
+
+            <!-- STAT 4 -->
+
+            <div class="project-stat-card">
+
+                <div class="stat-icon">
+
+                    <i class='bx bx-trophy'></i>
+
+                </div>
+
+                <div>
+
+                    <h3>8</h3>
+
+                    <p>Achievements</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CREATIVE TIMELINE (NEW) -->
+
+        <section class="creative-timeline journey-timeline" aria-label="Creative Journey Timeline">
+
+            <!-- HEADER -->
+
+            <header class="journey-header">
+
+                <div>
+                    <h3>Creative Journey</h3>
+                    <p class="journey-subtitle">From idea → build → ship. A quick snapshot of milestones.</p>
+                </div>
+
+                <div class="journey-chips" aria-label="Timeline filters">
+                    <span class="journey-chip is-active">2026</span>
+                    <span class="journey-chip">Milestones</span>
+                </div>
+
+            </header>
+
+            <!-- JOURNEY -->
+
+            <ol class="journey-list">
+
+                <li class="journey-item">
+
+                    <div class="journey-pin" aria-hidden="true">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+
+                    <article class="journey-card">
+                        <div class="journey-top">
+                            <span class="journey-badge">Launch</span>
+                            <span class="journey-date">Jan 2026</span>
+                        </div>
+                        <h4>The Fox Portfolio Launched</h4>
+                        <p>Shipped a modern portfolio with smooth animations and clean responsive layout.</p>
+                        <div class="journey-meta">
+                            <span><i class="fa-regular fa-circle-check"></i> Deployed</span>
+                            <span><i class="fa-solid fa-code"></i> Frontend</span>
+                        </div>
+                    </article>
+
+                </li>
+
+                <li class="journey-item">
+
+                    <div class="journey-pin" aria-hidden="true">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <article class="journey-card">
+                        <div class="journey-top">
+                            <span class="journey-badge is-blue">Design</span>
+                            <span class="journey-date">Mar 2026</span>
+                        </div>
+                        <h4>Dashboard UI Created</h4>
+                        <p>Designed a premium dashboard system with theme toggle, cards, and layout hierarchy.</p>
+                        <div class="journey-meta">
+                            <span><i class="fa-solid fa-palette"></i> UI/UX</span>
+                            <span><i class="fa-solid fa-wand-magic-sparkles"></i> Animations</span>
+                        </div>
+                    </article>
+
+                </li>
+
+                <li class="journey-item">
+
+                    <div class="journey-pin" aria-hidden="true">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+
+                    <article class="journey-card">
+                        <div class="journey-top">
+                            <span class="journey-badge is-green">Publish</span>
+                            <span class="journey-date">Apr 2026</span>
+                        </div>
+                        <h4>FunPlay Kids Published</h4>
+                        <p>Built a colorful kids learning website with playful sections and friendly visuals.</p>
+                        <div class="journey-meta">
+                            <span><i class="fa-solid fa-children"></i> Kids UI</span>
+                            <span><i class="fa-solid fa-bolt"></i> Interactive</span>
+                        </div>
+                    </article>
+
+                </li>
+
+            </ol>
+
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+
+        <section class="fox-testimonials" aria-labelledby="fox-testimonials-title">
+
+            <header class="fox-testimonials__header">
+                <p class="fox-testimonials__kicker">Testimonials</p>
+                <h2 id="fox-testimonials-title">Client & Visitor Feedback</h2>
+                <p class="fox-testimonials__desc">
+                    Short feedback from people who explored my projects and UI work.
+                </p>
+            </header>
+
+            <div class="fox-testimonials__grid">
+
+                <article class="fox-testimonials__card">
+                    <div class="fox-testimonials__top">
+                        <div class="fox-testimonials__rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="fox-testimonials__tag">UI Polish</span>
+                    </div>
+
+                    <p class="fox-testimonials__quote">
+                        “The Fox portfolio feels premium — clean spacing, smooth transitions, and a modern layout.”
+                    </p>
+
+                    <div class="fox-testimonials__user">
+                        <img src="images/client1.jpg" alt="Arun Kumar">
+                        <div class="fox-testimonials__meta">
+                            <h4 class="fox-testimonials__name">Arun Kumar</h4>
+                            <span class="fox-testimonials__role">Frontend Developer</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fox-testimonials__card fox-testimonials__card--featured">
+                    <div class="fox-testimonials__top">
+                        <div class="fox-testimonials__rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="fox-testimonials__tag">Responsive</span>
+                    </div>
+
+                    <p class="fox-testimonials__quote">
+                        “Dashboard UI is super neat and responsive. The cards, spacing, and hierarchy are spot on.”
+                    </p>
+
+                    <div class="fox-testimonials__user">
+                        <img src="images/portfolio client1.jpg" alt="Priya">
+                        <div class="fox-testimonials__meta">
+                            <h4 class="fox-testimonials__name">Priya</h4>
+                            <span class="fox-testimonials__role">UI/UX Designer</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fox-testimonials__card">
+                    <div class="fox-testimonials__top">
+                        <div class="fox-testimonials__rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="fox-testimonials__tag">Code Quality</span>
+                    </div>
+
+                    <p class="fox-testimonials__quote">
+                        “Great structure and consistent styling. The visuals look modern and the UX feels smooth.”
+                    </p>
+
+                    <div class="fox-testimonials__user">
+                        <img src="images/portfolio client4.jpg" alt="Rahul">
+                        <div class="fox-testimonials__meta">
+                            <h4 class="fox-testimonials__name">Rahul</h4>
+                            <span class="fox-testimonials__role">Web Designer</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

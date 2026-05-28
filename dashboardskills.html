@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <title>The Fox </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons -->
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="images/logo.png" alt="logo">
+                <span>THEFOX</span>
+
+            </a>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardproject.html">
+                    <i class='bx bx-code-alt'></i>
+                    Projects
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="dashboardskills.html">
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    Skills
+                </a>
+            </li>
+            <li>
+                <a href="dashboardachievements.html">
+                    <i class='bx bx-trophy'></i>
+                    Achievements
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardanalytics.html">
+                    <i class='bx bx-line-chart'></i>
+                    Analytics
+                </a>
+            </li>
+        </ul>
+        <div class="logout">
+
+            <a href="login.html" data-logout>
+
+                <i class='bx bx-log-out'></i>
+                Logout
+
+            </a>
+
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Skills</h1>
+
+            <div class="topbar-right">
+
+                <!-- DARK MODE -->
+
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <!-- RTL MODE -->
+
+                <button id="rtl-toggle" class="rtl-btn" aria-label="Toggle RTL">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                </button>
+
+                <!-- PROFILE -->
+
+                <a class="profile-chip" href="#" aria-label="Profile">
+
+                    <div class="profile-meta">
+                        <div class="profile-name">Bava</div>
+                        <div class="profile-plan">Code Nexus</div>
+                    </div>
+
+                    <div class="profile-avatar" aria-hidden="true">
+                        <img src="images/about.png" alt="Profile">
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- SKILLS LAYOUT -->
+
+        <section class="dash-skills" aria-label="Skills overview">
+
+            <!-- LEFT: SUMMARY -->
+
+            <div class="dash-skills__left">
+
+                <div class="dash-skills__hero">
+                    <div class="dash-skills__hero-icon" aria-hidden="true">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="dash-skills__hero-text">
+                        <h2>Skillboard</h2>
+                        <p>My current stack, strengths, and what I’m learning next.</p>
+                    </div>
+                </div>
+
+                <div class="dash-skills__quick">
+
+                    <article class="dash-skills__quick-card">
+                        <p class="dash-skills__label">Primary Stack</p>
+                        <div class="dash-skills__chips" role="list">
+                            <span class="dash-skills__chip" role="listitem">HTML</span>
+                            <span class="dash-skills__chip" role="listitem">CSS</span>
+                            <span class="dash-skills__chip" role="listitem">JavaScript</span>
+                            <span class="dash-skills__chip" role="listitem">UI/UX</span>
+                        </div>
+                    </article>
+
+                    <article class="dash-skills__quick-card">
+                        <p class="dash-skills__label">Learning Now</p>
+                        <div class="dash-skills__chips" role="list">
+                            <span class="dash-skills__chip is-soft" role="listitem">React</span>
+                            <span class="dash-skills__chip is-soft" role="listitem">TypeScript</span>
+                            <span class="dash-skills__chip is-soft" role="listitem">Node.js</span>
+                        </div>
+                    </article>
+
+                    <article class="dash-skills__quick-card dash-skills__quick-card--accent">
+                        <p class="dash-skills__label">Focus</p>
+                        <p class="dash-skills__focus">Design systems • Accessibility • Performance</p>
+                    </article>
+
+                </div>
+
+                <article class="dash-skills__mini">
+                    <h3>Toolbox</h3>
+                    <div class="dash-skills__tools" role="list">
+                        <span class="dash-skills__tool" role="listitem"><i class="fa-brands fa-figma"></i> Figma</span>
+                        <span class="dash-skills__tool" role="listitem"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="dash-skills__tool" role="listitem"><i class="fa-brands fa-github"></i> GitHub</span>
+                        <span class="dash-skills__tool" role="listitem"><i class="fa-solid fa-code"></i> VS Code</span>
+                    </div>
+                </article>
+
+                <article class="dash-skills__mini dash-skills__mini--highlights" aria-label="Weekly highlights">
+                    <h3>Weekly Highlights</h3>
+                    <div class="dash-skills__highlights">
+                        <div class="dash-skills__highlight">
+                            <span class="dash-skills__highlight-k">Projects</span>
+                            <span class="dash-skills__highlight-v">3 shipped</span>
+                        </div>
+                        <div class="dash-skills__highlight">
+                            <span class="dash-skills__highlight-k">Practice</span>
+                            <span class="dash-skills__highlight-v">12 hrs</span>
+                        </div>
+                        <div class="dash-skills__highlight">
+                            <span class="dash-skills__highlight-k">Next</span>
+                            <span class="dash-skills__highlight-v">React UI</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- RIGHT: SKILL MATRIX -->
+
+            <div class="dash-skills__right" aria-label="Skill matrix">
+
+                <article class="dash-skills__panel">
+                    <div class="dash-skills__panel-head">
+                        <h3>Frontend</h3>
+                        <p>Core web + interaction</p>
+                    </div>
+
+                    <div class="dash-skillbar">
+                        <div class="dash-skillbar__row">
+                            <span class="dash-skillbar__name">HTML</span>
+                            <span class="dash-skillbar__val">92%</span>
+                        </div>
+                        <div class="dash-skillbar__track" style="--val: 92">
+                            <div class="dash-skillbar__fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="dash-skillbar">
+                        <div class="dash-skillbar__row">
+                            <span class="dash-skillbar__name">CSS</span>
+                            <span class="dash-skillbar__val">88%</span>
+                        </div>
+                        <div class="dash-skillbar__track" style="--val: 88">
+                            <div class="dash-skillbar__fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="dash-skillbar">
+                        <div class="dash-skillbar__row">
+                            <span class="dash-skillbar__name">JavaScript</span>
+                            <span class="dash-skillbar__val">80%</span>
+                        </div>
+                        <div class="dash-skillbar__track" style="--val: 80">
+                            <div class="dash-skillbar__fill"></div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="dash-skills__panel">
+                    <div class="dash-skills__panel-head">
+                        <h3>UI / UX</h3>
+                        <p>Design thinking + visuals</p>
+                    </div>
+
+                    <div class="dash-skillbar">
+                        <div class="dash-skillbar__row">
+                            <span class="dash-skillbar__name">Wireframing</span>
+                            <span class="dash-skillbar__val">84%</span>
+                        </div>
+                        <div class="dash-skillbar__track" style="--val: 84">
+                            <div class="dash-skillbar__fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="dash-skillbar">
+                        <div class="dash-skillbar__row">
+                            <span class="dash-skillbar__name">Responsive Design</span>
+                            <span class="dash-skillbar__val">86%</span>
+                        </div>
+                        <div class="dash-skillbar__track" style="--val: 86">
+                            <div class="dash-skillbar__fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="dash-skillbar">
+                        <div class="dash-skillbar__row">
+                            <span class="dash-skillbar__name">Accessibility</span>
+                            <span class="dash-skillbar__val">76%</span>
+                        </div>
+                        <div class="dash-skillbar__track" style="--val: 76">
+                            <div class="dash-skillbar__fill"></div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="dash-skills__panel">
+                    <div class="dash-skills__panel-head">
+                        <h3>Extras</h3>
+                        <p>Workflow + best practices</p>
+                    </div>
+
+                    <div class="dash-skills__list">
+                        <div class="dash-skills__item">
+                            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                            <div>
+                                <h4>Component Thinking</h4>
+                                <p>Reusable sections and consistent UI patterns.</p>
+                            </div>
+                        </div>
+                        <div class="dash-skills__item">
+                            <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+                            <div>
+                                <h4>Performance</h4>
+                                <p>Optimize images, reduce layout shifts, smoother UX.</p>
+                            </div>
+                        </div>
+                        <div class="dash-skills__item">
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            <div>
+                                <h4>Basics of Web Security</h4>
+                                <p>Safe forms, clean inputs, good project structure.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

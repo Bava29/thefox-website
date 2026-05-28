@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <title>The Fox | Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="auth-body">
+
+    <main class="auth" aria-label="Login">
+
+        <section class="auth__shell">
+
+            <aside class="auth__brand" aria-label="Brand">
+                <a class="auth__logo" href="index.html" aria-label="Go to home">
+                    <img src="images/logo.png" alt="The Fox logo">
+                    <span>THEFOX</span>
+                </a>
+
+                <h1>Welcome back</h1>
+                <p>
+                    Login to continue your dashboard experience — analytics, projects, skills and achievements.
+                </p>
+
+                <div class="auth__bullets" role="list" aria-label="Highlights">
+                    <div class="auth__bullet" role="listitem">
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                        <span>Simple local login</span>
+                    </div>
+                    <div class="auth__bullet" role="listitem">
+                        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                        <span>Track performance</span>
+                    </div>
+                    <div class="auth__bullet" role="listitem">
+                        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                        <span>Fast and clean UI</span>
+                    </div>
+                </div>
+
+                <div class="auth__footer">
+                    <a class="auth__link" href="portfolio.html">
+                        View Portfolio
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </aside>
+
+            <section class="auth__panel" aria-label="Login form">
+
+                <header class="auth__panel-head">
+                    <h2>Login</h2>
+                    <p>Use your email and password.</p>
+                </header>
+
+                <form id="login-form" class="auth__form" novalidate>
+
+                    <div class="auth__field">
+                        <label for="login-email">Email</label>
+                        <div class="auth__input">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <input id="login-email" name="email" type="email" placeholder="you@email.com" autocomplete="email"
+                                required>
+                        </div>
+                        <p class="auth__help" data-help="email"></p>
+                    </div>
+
+                    <div class="auth__field">
+                        <label for="login-password">Password</label>
+                        <div class="auth__input">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input id="login-password" name="password" type="password" placeholder="••••••••"
+                                autocomplete="current-password" required>
+                            <button class="auth__peek" type="button" aria-label="Show password" data-peek>
+                                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <p class="auth__help" data-help="password"></p>
+                    </div>
+
+                    <div class="auth__row">
+                        <label class="auth__check">
+                            <input type="checkbox" name="remember" checked>
+                            <span>Remember me</span>
+                        </label>
+
+                        <a class="auth__muted" href="#" aria-disabled="true" title="Demo only">Forgot password?</a>
+                    </div>
+
+                    <div class="auth__error" id="login-error" role="alert" aria-live="polite"></div>
+
+                    <button class="auth__submit" type="submit">
+                        <span>Login</span>
+                        <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
+                    </button>
+
+                    <p class="auth__switch">
+                        Don’t have an account?
+                        <a href="register.html">Create one</a>
+                    </p>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

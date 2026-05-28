@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <title>The Fox </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons -->
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="images/logo.png" alt="logo">
+                <span>THEFOX</span>
+
+            </a>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardproject.html">
+                    <i class='bx bx-code-alt'></i>
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardskills.html">
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    Skills
+                </a>
+            </li>
+            <li class="active">
+                <a href="dashboardachievements.html">
+                    <i class='bx bx-trophy'></i>
+                    Achievements
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardanalytics.html">
+                    <i class='bx bx-line-chart'></i>
+                    Analytics
+                </a>
+            </li>
+        </ul>
+        <div class="logout">
+
+            <a href="login.html" data-logout>
+
+                <i class='bx bx-log-out'></i>
+                Logout
+
+            </a>
+
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Achievements</h1>
+
+            <div class="topbar-right">
+
+                <!-- DARK MODE -->
+
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <!-- RTL MODE -->
+
+                <button id="rtl-toggle" class="rtl-btn" aria-label="Toggle RTL">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                </button>
+
+                <!-- PROFILE -->
+
+                <a class="profile-chip" href="#" aria-label="Profile">
+
+                    <div class="profile-meta">
+                        <div class="profile-name">Bava</div>
+                        <div class="profile-plan">Code Nexus</div>
+                    </div>
+
+                    <div class="profile-avatar" aria-hidden="true">
+                        <img src="images/about.png" alt="Profile">
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ACHIEVEMENTS LAYOUT -->
+
+        <section class="dash-achieve" aria-label="Achievements and milestones">
+
+            <div class="dash-achieve__hero">
+
+                <div class="dash-achieve__hero-left">
+                    <p class="dash-achieve__kicker">Milestones</p>
+                    <h2>Proof of Progress</h2>
+                    <p class="dash-achieve__lead">
+                        A quick snapshot of certifications, wins, and the work I’m proud of this year.
+                    </p>
+
+                    <div class="dash-achieve__actions">
+                        <a class="dash-achieve__btn dash-achieve__btn--primary" href="dashboardproject.html">
+                            <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+                            View Projects
+                        </a>
+                        <a class="dash-achieve__btn dash-achieve__btn--ghost" href="dashboardskills.html">
+                            <i class="fa-solid fa-chart-simple" aria-hidden="true"></i>
+                            Skillboard
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dash-achieve__hero-right" aria-hidden="true">
+                    <div class="dash-achieve__meter">
+                        <div class="dash-achieve__meter-top">
+                            <span class="dash-achieve__meter-title">Consistency</span>
+                            <span class="dash-achieve__meter-score">82%</span>
+                        </div>
+                        <div class="dash-achieve__meter-track">
+                            <div class="dash-achieve__meter-fill" style="width: 82%"></div>
+                        </div>
+                        <div class="dash-achieve__meter-hint">Weekly practice + shipping projects</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dash-achieve__stats" aria-label="Achievement stats">
+
+                <article class="dash-achieve__stat">
+                    <div class="dash-achieve__stat-icon" aria-hidden="true"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="dash-achieve__stat-body">
+                        <p class="dash-achieve__stat-k">Awards</p>
+                        <p class="dash-achieve__stat-v">04</p>
+                    </div>
+                </article>
+
+                <article class="dash-achieve__stat">
+                    <div class="dash-achieve__stat-icon is-sky" aria-hidden="true"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="dash-achieve__stat-body">
+                        <p class="dash-achieve__stat-k">Certificates</p>
+                        <p class="dash-achieve__stat-v">07</p>
+                    </div>
+                </article>
+
+                <article class="dash-achieve__stat">
+                    <div class="dash-achieve__stat-icon is-amber" aria-hidden="true"><i class="fa-solid fa-fire"></i></div>
+                    <div class="dash-achieve__stat-body">
+                        <p class="dash-achieve__stat-k">Streak</p>
+                        <p class="dash-achieve__stat-v">18 days</p>
+                    </div>
+                </article>
+
+                <article class="dash-achieve__stat">
+                    <div class="dash-achieve__stat-icon is-emerald" aria-hidden="true"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="dash-achieve__stat-body">
+                        <p class="dash-achieve__stat-k">Shipped</p>
+                        <p class="dash-achieve__stat-v">12 builds</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="dash-achieve__grid">
+
+                <section class="dash-achieve__panel dash-achieve__badges" aria-label="Badges">
+                    <div class="dash-achieve__panel-head">
+                        <h3>Badges</h3>
+                        <p>Strength markers</p>
+                    </div>
+
+                    <div class="dash-achieve__badge-grid" role="list">
+                        <div class="dash-achieve__badge" role="listitem">
+                            <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                            <div>
+                                <h4>UI Polish</h4>
+                                <p>Spacing, colors, consistency</p>
+                            </div>
+                        </div>
+                        <div class="dash-achieve__badge" role="listitem">
+                            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+                            <div>
+                                <h4>Responsive</h4>
+                                <p>Mobile-first layouts</p>
+                            </div>
+                        </div>
+                        <div class="dash-achieve__badge" role="listitem">
+                            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                            <div>
+                                <h4>Animations</h4>
+                                <p>Smooth micro-interactions</p>
+                            </div>
+                        </div>
+                        <div class="dash-achieve__badge" role="listitem">
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            <div>
+                                <h4>Best Practices</h4>
+                                <p>Clean structure, reusable</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dash-achieve__panel dash-achieve__certs" aria-label="Certificates">
+                    <div class="dash-achieve__panel-head">
+                        <h3>Certificates</h3>
+                        <p>Recent learning</p>
+                    </div>
+
+                    <div class="dash-achieve__cert-list">
+
+                        <article class="dash-achieve__cert">
+                            <div class="dash-achieve__cert-left">
+                                <div class="dash-achieve__cert-icon" aria-hidden="true"><i class="fa-solid fa-medal"></i></div>
+                                <div>
+                                    <h4>Frontend Fundamentals</h4>
+                                    <p>HTML • CSS • JavaScript</p>
+                                </div>
+                            </div>
+                            <div class="dash-achieve__cert-right">
+                                <span class="dash-achieve__pill">Apr 2026</span>
+                            </div>
+                        </article>
+
+                        <article class="dash-achieve__cert">
+                            <div class="dash-achieve__cert-left">
+                                <div class="dash-achieve__cert-icon is-sky" aria-hidden="true"><i class="fa-solid fa-pen-ruler"></i></div>
+                                <div>
+                                    <h4>UI/UX Essentials</h4>
+                                    <p>Wireframes • Layout • Hierarchy</p>
+                                </div>
+                            </div>
+                            <div class="dash-achieve__cert-right">
+                                <span class="dash-achieve__pill">Mar 2026</span>
+                            </div>
+                        </article>
+
+                        <article class="dash-achieve__cert">
+                            <div class="dash-achieve__cert-left">
+                                <div class="dash-achieve__cert-icon is-emerald" aria-hidden="true"><i class="fa-solid fa-gauge-high"></i></div>
+                                <div>
+                                    <h4>Web Performance Basics</h4>
+                                    <p>Images • Lighthouse • UX</p>
+                                </div>
+                            </div>
+                            <div class="dash-achieve__cert-right">
+                                <span class="dash-achieve__pill">Feb 2026</span>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+            </div>
+
+            <section class="dash-achieve__timeline" aria-label="Milestone timeline">
+
+                <div class="dash-achieve__timeline-head">
+                    <h3>Timeline</h3>
+                    <p>Major moments</p>
+                </div>
+
+                <ol class="dash-achieve__timeline-list">
+                    <li class="dash-achieve__t-item">
+                        <div class="dash-achieve__t-dot" aria-hidden="true"></div>
+                        <div class="dash-achieve__t-card">
+                            <div class="dash-achieve__t-top">
+                                <span class="dash-achieve__pill is-emerald">Shipped</span>
+                                <span class="dash-achieve__t-date">May 2026</span>
+                            </div>
+                            <h4>Dashboard UI Upgrade</h4>
+                            <p>Rebuilt key pages with better hierarchy, spacing, and dark-mode support.</p>
+                        </div>
+                    </li>
+
+                    <li class="dash-achieve__t-item">
+                        <div class="dash-achieve__t-dot" aria-hidden="true"></div>
+                        <div class="dash-achieve__t-card">
+                            <div class="dash-achieve__t-top">
+                                <span class="dash-achieve__pill is-sky">Learning</span>
+                                <span class="dash-achieve__t-date">Apr 2026</span>
+                            </div>
+                            <h4>UI System Practice</h4>
+                            <p>Started building reusable components and consistent card layouts.</p>
+                        </div>
+                    </li>
+
+                    <li class="dash-achieve__t-item">
+                        <div class="dash-achieve__t-dot" aria-hidden="true"></div>
+                        <div class="dash-achieve__t-card">
+                            <div class="dash-achieve__t-top">
+                                <span class="dash-achieve__pill is-amber">Win</span>
+                                <span class="dash-achieve__t-date">Mar 2026</span>
+                            </div>
+                            <h4>Portfolio Feedback</h4>
+                            <p>Got positive reviews for responsiveness, animations, and clean UI.</p>
+                        </div>
+                    </li>
+                </ol>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

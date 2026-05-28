@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <title>The Fox </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons -->
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="images/logo.png" alt="logo">
+                <span>THEFOX</span>
+
+            </a>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardproject.html">
+                    <i class='bx bx-code-alt'></i>
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardskills.html">
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    Skills
+                </a>
+            </li>
+            <li>
+                <a href="dashboardachievements.html">
+                    <i class='bx bx-trophy'></i>
+                    Achievements
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="dashboardanalytics.html">
+                    <i class='bx bx-line-chart'></i>
+                    Analytics
+                </a>
+            </li>
+        </ul>
+        <div class="logout">
+
+            <a href="login.html" data-logout>
+
+                <i class='bx bx-log-out'></i>
+                Logout
+
+            </a>
+
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Analytics</h1>
+
+            <div class="topbar-right">
+
+                <!-- DARK MODE -->
+
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <!-- RTL MODE -->
+
+                <button id="rtl-toggle" class="rtl-btn" aria-label="Toggle RTL">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                </button>
+
+                <!-- PROFILE -->
+
+                <a class="profile-chip" href="#" aria-label="Profile">
+
+                    <div class="profile-meta">
+                        <div class="profile-name">Bava</div>
+                        <div class="profile-plan">Code Nexus</div>
+                    </div>
+
+                    <div class="profile-avatar" aria-hidden="true">
+                        <img src="images/about.png" alt="Profile">
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ANALYTICS STUDIO -->
+
+        <section class="dash-analytics" aria-label="Analytics studio">
+
+            <header class="dash-analytics__head">
+                <div class="dash-analytics__head-left">
+                    <p class="dash-analytics__kicker">Performance</p>
+                    <h2>Analytics Studio</h2>
+                    <p class="dash-analytics__sub">
+                        Portfolio reach, engagement, and project interest — in one view.
+                    </p>
+                </div>
+
+                <div class="dash-analytics__head-right" aria-label="Controls">
+
+                    <div class="dash-analytics__seg" role="tablist" aria-label="Date range">
+                        <button class="dash-analytics__seg-btn is-active" type="button" role="tab"
+                            aria-selected="true" data-range="7">7D</button>
+                        <button class="dash-analytics__seg-btn" type="button" role="tab" aria-selected="false"
+                            data-range="30">30D</button>
+                        <button class="dash-analytics__seg-btn" type="button" role="tab" aria-selected="false"
+                            data-range="90">90D</button>
+                    </div>
+
+                    <button id="da-refresh" class="dash-analytics__icon" type="button" aria-label="Refresh analytics">
+                        <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+                    </button>
+
+                    <button id="da-export" class="dash-analytics__btn" type="button">
+                        <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                        Export
+                    </button>
+
+                </div>
+            </header>
+
+            <div class="dash-analytics__grid">
+
+                <!-- KPI STRIP -->
+
+                <article class="da-card da-kpi" aria-label="Key metrics">
+                    <div class="da-kpi__row">
+                        <div class="da-kpi__item">
+                            <p class="da-kpi__label">Total Visits</p>
+                            <div class="da-kpi__value">
+                                <span id="da-kpi-visits">0</span>
+                                <span class="da-kpi__delta is-up" id="da-kpi-visits-delta">+0%</span>
+                            </div>
+                            <svg class="da-spark" viewBox="0 0 120 36" aria-hidden="true" data-spark="visits">
+                                <path class="da-spark__line" d=""></path>
+                            </svg>
+                        </div>
+
+                        <div class="da-kpi__item">
+                            <p class="da-kpi__label">Avg Session</p>
+                            <div class="da-kpi__value">
+                                <span id="da-kpi-session">0:00</span>
+                                <span class="da-kpi__delta is-up" id="da-kpi-session-delta">+0%</span>
+                            </div>
+                            <svg class="da-spark" viewBox="0 0 120 36" aria-hidden="true" data-spark="session">
+                                <path class="da-spark__line" d=""></path>
+                            </svg>
+                        </div>
+
+                        <div class="da-kpi__item">
+                            <p class="da-kpi__label">Project Clicks</p>
+                            <div class="da-kpi__value">
+                                <span id="da-kpi-clicks">0</span>
+                                <span class="da-kpi__delta is-down" id="da-kpi-clicks-delta">-0%</span>
+                            </div>
+                            <svg class="da-spark" viewBox="0 0 120 36" aria-hidden="true" data-spark="clicks">
+                                <path class="da-spark__line" d=""></path>
+                            </svg>
+                        </div>
+
+                        <div class="da-kpi__item">
+                            <p class="da-kpi__label">Bounce Rate</p>
+                            <div class="da-kpi__value">
+                                <span id="da-kpi-bounce">0%</span>
+                                <span class="da-kpi__delta is-up" id="da-kpi-bounce-delta">+0%</span>
+                            </div>
+                            <svg class="da-spark" viewBox="0 0 120 36" aria-hidden="true" data-spark="bounce">
+                                <path class="da-spark__line" d=""></path>
+                            </svg>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PULSE CHART -->
+
+                <article class="da-card da-pulse" aria-label="Traffic pulse chart">
+                    <div class="da-card__head">
+                        <div>
+                            <h3>Traffic Pulse</h3>
+                            <p>Visits over time</p>
+                        </div>
+                        <div class="da-badges" aria-label="Signals">
+                            <span class="da-badge is-emerald"><i class="fa-solid fa-circle" aria-hidden="true"></i>
+                                Live</span>
+                            <span class="da-badge is-violet"><i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                                Peaks</span>
+                        </div>
+                    </div>
+
+                    <div class="da-pulse__chart" aria-hidden="true">
+                        <svg id="da-linechart" viewBox="0 0 720 240" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="da-line-grad" x1="0" x2="0" y1="0" y2="1">
+                                    <stop offset="0" stop-color="rgba(168,85,247,0.55)" />
+                                    <stop offset="1" stop-color="rgba(34,211,238,0.02)" />
+                                </linearGradient>
+                                <linearGradient id="da-stroke-grad" x1="0" x2="1" y1="0" y2="0">
+                                    <stop offset="0" stop-color="#a855f7" />
+                                    <stop offset="1" stop-color="#22d3ee" />
+                                </linearGradient>
+                            </defs>
+
+                            <path id="da-line-area" fill="url(#da-line-grad)" d=""></path>
+                            <path id="da-line" fill="none" stroke="url(#da-stroke-grad)" stroke-width="3" d=""
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+
+                    <div class="da-pulse__meta" aria-label="Chart summary">
+                        <div class="da-mini">
+                            <p class="da-mini__k">Best Day</p>
+                            <p class="da-mini__v" id="da-best-day">—</p>
+                        </div>
+                        <div class="da-mini">
+                            <p class="da-mini__k">Daily Avg</p>
+                            <p class="da-mini__v" id="da-daily-avg">—</p>
+                        </div>
+                        <div class="da-mini">
+                            <p class="da-mini__k">Trend</p>
+                            <p class="da-mini__v" id="da-trend">—</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SOURCE RING -->
+
+                <article class="da-card da-ring" aria-label="Traffic sources">
+                    <div class="da-card__head">
+                        <div>
+                            <h3>Source Ring</h3>
+                            <p>Where visitors come from</p>
+                        </div>
+                        <span class="da-pill" id="da-source-total">0</span>
+                    </div>
+
+                    <div class="da-ring__wrap">
+                        <div class="da-ring__viz" aria-hidden="true">
+                            <svg id="da-donut" viewBox="0 0 220 220">
+                                <circle class="da-donut__track" cx="110" cy="110" r="78"></circle>
+                                <circle class="da-donut__slice is-violet" cx="110" cy="110" r="78"></circle>
+                                <circle class="da-donut__slice is-cyan" cx="110" cy="110" r="78"></circle>
+                                <circle class="da-donut__slice is-amber" cx="110" cy="110" r="78"></circle>
+                            </svg>
+                            <div class="da-ring__center">
+                                <p class="da-ring__big" id="da-source-top">—</p>
+                                <p class="da-ring__small">Top Source</p>
+                            </div>
+                        </div>
+
+                        <ul class="da-ring__legend" aria-label="Source breakdown">
+                            <li>
+                                <span class="da-dot is-violet" aria-hidden="true"></span>
+                                <span class="da-ring__name">Direct</span>
+                                <span class="da-ring__val" id="da-src-direct">0%</span>
+                            </li>
+                            <li>
+                                <span class="da-dot is-cyan" aria-hidden="true"></span>
+                                <span class="da-ring__name">Social</span>
+                                <span class="da-ring__val" id="da-src-social">0%</span>
+                            </li>
+                            <li>
+                                <span class="da-dot is-amber" aria-hidden="true"></span>
+                                <span class="da-ring__name">Search</span>
+                                <span class="da-ring__val" id="da-src-search">0%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- HEATMAP -->
+
+                <article class="da-card da-heat" aria-label="Activity heatmap">
+                    <div class="da-card__head">
+                        <div>
+                            <h3>Activity Heatmap</h3>
+                            <p>Engagement intensity</p>
+                        </div>
+                        <div class="da-heat__key" aria-label="Heatmap key">
+                            <span class="da-heat__k">Low</span>
+                            <span class="da-heat__swatches" aria-hidden="true">
+                                <span class="da-heat__swatch" data-lvl="1"></span>
+                                <span class="da-heat__swatch" data-lvl="2"></span>
+                                <span class="da-heat__swatch" data-lvl="3"></span>
+                                <span class="da-heat__swatch" data-lvl="4"></span>
+                            </span>
+                            <span class="da-heat__k">High</span>
+                        </div>
+                    </div>
+
+                    <div id="da-heatmap" class="da-heat__grid" role="grid" aria-label="Heatmap grid"></div>
+
+                    <p class="da-heat__hint" id="da-heat-hint">Hover a cell to see details.</p>
+                </article>
+
+                <!-- INSIGHTS -->
+
+                <article class="da-card da-insights" aria-label="Insights">
+                    <div class="da-card__head">
+                        <div>
+                            <h3>Insights</h3>
+                            <p>What changed this range</p>
+                        </div>
+                        <span class="da-pill is-ghost" id="da-insight-count">0 notes</span>
+                    </div>
+
+                    <ul class="da-insights__list" id="da-insights-list" aria-label="Insight list"></ul>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dashboardanalytics.js"></script>
+</body>
+
+</html>

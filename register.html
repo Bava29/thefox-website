@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <title>The Fox | Register</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="auth-body">
+
+    <main class="auth" aria-label="Register">
+
+        <section class="auth__shell">
+
+            <aside class="auth__brand" aria-label="Brand">
+                <a class="auth__logo" href="index.html" aria-label="Go to home">
+                    <img src="images/logo.png" alt="The Fox logo">
+                    <span>THEFOX</span>
+                </a>
+
+                <h1>Create your account</h1>
+                <p>
+                    Register once and unlock your dashboard pages. This is a local demo login (saved in your browser).
+                </p>
+
+                <div class="auth__bullets" role="list" aria-label="Highlights">
+                    <div class="auth__bullet" role="listitem">
+                        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                        <span>Modern clean forms</span>
+                    </div>
+                    <div class="auth__bullet" role="listitem">
+                        <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+                        <span>Profile-ready</span>
+                    </div>
+                    <div class="auth__bullet" role="listitem">
+                        <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+                        <span>Fast navigation</span>
+                    </div>
+                </div>
+
+                <div class="auth__footer">
+                    <a class="auth__link" href="about.html">
+                        About Me
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </aside>
+
+            <section class="auth__panel" aria-label="Register form">
+
+                <header class="auth__panel-head">
+                    <h2>Register</h2>
+                    <p>Fill the details to create an account.</p>
+                </header>
+
+                <form id="register-form" class="auth__form" novalidate>
+
+                    <div class="auth__field">
+                        <label for="reg-name">Full Name</label>
+                        <div class="auth__input">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                            <input id="reg-name" name="name" type="text" placeholder="Your name" autocomplete="name"
+                                required>
+                        </div>
+                        <p class="auth__help" data-help="name"></p>
+                    </div>
+
+                    <div class="auth__field">
+                        <label for="reg-email">Email</label>
+                        <div class="auth__input">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <input id="reg-email" name="email" type="email" placeholder="you@email.com" autocomplete="email"
+                                required>
+                        </div>
+                        <p class="auth__help" data-help="email"></p>
+                    </div>
+
+                    <div class="auth__field">
+                        <label for="reg-password">Password</label>
+                        <div class="auth__input">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input id="reg-password" name="password" type="password" placeholder="Create password"
+                                autocomplete="new-password" required minlength="6">
+                            <button class="auth__peek" type="button" aria-label="Show password" data-peek>
+                                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <p class="auth__help" data-help="password"></p>
+                    </div>
+
+                    <div class="auth__field">
+                        <label for="reg-confirm">Confirm Password</label>
+                        <div class="auth__input">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input id="reg-confirm" name="confirm" type="password" placeholder="Repeat password"
+                                autocomplete="new-password" required minlength="6">
+                        </div>
+                        <p class="auth__help" data-help="confirm"></p>
+                    </div>
+
+                    <label class="auth__check auth__check--terms">
+                        <input id="reg-terms" type="checkbox" required>
+                        <span>
+                            I agree to the <a href="#" aria-disabled="true" title="Demo only">Terms</a> and
+                            <a href="#" aria-disabled="true" title="Demo only">Privacy</a>.
+                        </span>
+                    </label>
+
+                    <div class="auth__error" id="register-error" role="alert" aria-live="polite"></div>
+
+                    <button class="auth__submit" type="submit">
+                        <span>Create Account</span>
+                        <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                    </button>
+
+                    <p class="auth__switch">
+                        Already have an account?
+                        <a href="login.html">Login</a>
+                    </p>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

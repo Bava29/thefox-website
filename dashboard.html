@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <title>The Fox </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons -->
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="index.html">
+
+                <img src="images/logo.png" alt="logo">
+                <span>THEFOX</span>
+
+            </a>
+
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardproject.html">
+                    <i class='bx bx-code-alt'></i>
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardskills.html">
+                    <i class='bx bx-bar-chart-alt-2'></i>
+                    Skills
+                </a>
+            </li>
+            <li>
+                <a href="dashboardachievements.html">
+                    <i class='bx bx-trophy'></i>
+                    Achievements
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboardanalytics.html">
+                    <i class='bx bx-line-chart'></i>
+                    Analytics
+                </a>
+            </li>
+        </ul>
+        <div class="logout">
+
+            <a href="login.html" data-logout>
+
+                <i class='bx bx-log-out'></i>
+                Logout
+
+            </a>
+
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Dashboard Overview</h1>
+
+            <div class="topbar-right">
+
+                <!-- DARK MODE -->
+
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <!-- RTL MODE -->
+
+                <button id="rtl-toggle" class="rtl-btn" aria-label="Toggle RTL">
+
+                    <i class="fa-solid fa-right-left"></i>
+
+                </button>
+
+                <!-- PROFILE -->
+
+                <a class="profile-chip" href="#" aria-label="Profile">
+
+                    <div class="profile-meta">
+                        <div class="profile-name">Bava</div>
+                        <div class="profile-plan">Code Nexus</div>
+                    </div>
+
+                    <div class="profile-avatar" aria-hidden="true">
+                        <img src="images/about.png" alt="Profile">
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CONTENT HERE -->
+
+        <!-- HERO -->
+
+        <div class="fox-dashboard-hero">
+
+            <div>
+
+                <h2>Welcome Back, Bava 👋</h2>
+
+                <p>
+                    Manage your portfolio, projects and creative growth from one place.
+                </p>
+
+            </div>
+
+            <a href="portfolio.html" class="fox-btn">
+
+                View Portfolio
+
+            </a>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="fox-stats">
+
+            <div class="fox-card">
+
+                <i class='bx bx-code-alt'></i>
+
+                <h3>15</h3>
+
+                <p>Live Projects</p>
+
+            </div>
+
+            <div class="fox-card">
+
+                <i class='bx bx-user'></i>
+
+                <h3>8.4K</h3>
+
+                <p>Portfolio Visitors</p>
+
+            </div>
+
+            <div class="fox-card">
+
+                <i class='bx bx-layer'></i>
+
+                <h3>24</h3>
+
+                <p>Skills Learned</p>
+
+            </div>
+
+            <div class="fox-card">
+
+                <i class='bx bx-trophy'></i>
+
+                <h3>12</h3>
+
+                <p>Certificates</p>
+
+            </div>
+
+        </div>
+
+        <!-- MAIN GRID -->
+
+        <div class="fox-grid">
+
+            <!-- LEFT -->
+
+            <div class="fox-large-card">
+
+                <div class="fox-card-header">
+
+                    <h3>Creative Progress</h3>
+
+                    <span>2026</span>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <div class="progress-text">
+
+                        <span>Frontend Development</span>
+
+                        <span>92%</span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill html"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <div class="progress-text">
+
+                        <span>UI/UX Design</span>
+
+                        <span>80%</span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill ui"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <div class="progress-text">
+
+                        <span>JavaScript</span>
+
+                        <span>75%</span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill js"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <div class="progress-text">
+
+                        <span>Backend Learning</span>
+
+                        <span>60%</span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill backend"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="fox-activity">
+
+                <h3>Recent Activity</h3>
+
+                <ul>
+
+                    <li>
+                        <i class='bx bx-check-circle'></i>
+                        New portfolio section added
+                    </li>
+
+                    <li>
+                        <i class='bx bx-code'></i>
+                        Dashboard UI updated
+                    </li>
+
+                    <li>
+                        <i class='bx bx-palette'></i>
+                        Creative design improved
+                    </li>
+
+                    <li>
+                        <i class='bx bx-bar-chart'></i>
+                        Portfolio traffic increased
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- MINI ANALYTICS -->
+
+        <div class="mini-analytics">
+
+            <!-- CARD 1 -->
+
+            <div class="mini-card">
+
+                <div class="mini-icon">
+
+                    <i class='bx bx-trending-up'></i>
+
+                </div>
+
+                <div>
+
+                    <h4>Growth</h4>
+
+                    <p>+18% This Month</p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="mini-card">
+
+                <div class="mini-icon">
+
+                    <i class='bx bx-time-five'></i>
+
+                </div>
+
+                <div>
+
+                    <h4>Learning Hours</h4>
+
+                    <p>120+ Hours</p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="mini-card">
+
+                <div class="mini-icon">
+
+                    <i class='bx bx-globe'></i>
+
+                </div>
+
+                <div>
+
+                    <h4>Live Websites</h4>
+
+                    <p>5 Projects Online</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- GOALS SECTION -->
+
+        <div class="fox-goals">
+
+            <div class="goals-header">
+
+                <h3>2026 Goals</h3>
+
+                <span>In Progress</span>
+
+            </div>
+
+            <!-- GOAL 1 -->
+
+            <div class="goal-item">
+
+                <div class="goal-text">
+
+                    <p>Complete Full Stack Development</p>
+
+                    <span>75%</span>
+
+                </div>
+
+                <div class="goal-bar">
+
+                    <div class="goal-fill fullstack"></div>
+
+                </div>
+
+            </div>
+
+            <!-- GOAL 2 -->
+
+            <div class="goal-item">
+
+                <div class="goal-text">
+
+                    <p>Build 10 Live Projects</p>
+
+                    <span>90%</span>
+
+                </div>
+
+                <div class="goal-bar">
+
+                    <div class="goal-fill projects"></div>
+
+                </div>
+
+            </div>
+
+            <!-- GOAL 3 -->
+
+            <div class="goal-item">
+
+                <div class="goal-text">
+
+                    <p>Improve UI/UX Skills</p>
+
+                    <span>80%</span>
+
+                </div>
+
+                <div class="goal-bar">
+
+                    <div class="goal-fill uiux"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RECENT PROJECTS TABLE -->
+
+        <div class="fox-table-section">
+
+            <div class="table-header">
+
+                <h3>Recent Projects</h3>
+
+                <a href="portfolio.html">See All</a>
+
+            </div>
+
+            <table class="fox-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Project</th>
+                        <th>Status</th>
+                        <th>Technology</th>
+                        <th>Progress</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>The Fox Portfolio</td>
+
+                        <td>
+                            <span class="status completed">
+
+                                Completed
+
+                            </span>
+                        </td>
+
+                        <td>HTML • CSS • JS</td>
+
+                        <td>100%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>FunPlay Kids</td>
+
+                        <td>
+                            <span class="status progress">
+
+                                Ongoing
+
+                            </span>
+                        </td>
+
+                        <td>Frontend</td>
+
+                        <td>85%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Dashboard UI</td>
+
+                        <td>
+                            <span class="status completed">
+
+                                Completed
+
+                            </span>
+                        </td>
+
+                        <td>UI Design</td>
+
+                        <td>100%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>WomenSafe Analytics</td>
+
+                        <td>
+                            <span class="status pending">
+
+                                Planning
+
+                            </span>
+                        </td>
+
+                        <td>AI + Analytics</td>
+
+                        <td>40%</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
