@@ -9,22 +9,25 @@ const prevHero = document.querySelector(".hero-prev");
 let heroIndex = 0;
 
 function showHeroSlide(index) {
+    if (!heroSlides.length) return;
     heroSlides[heroIndex].classList.remove("active");
     heroIndex = index;
     heroSlides[heroIndex].classList.add("active");
 }
 
-nextHero.addEventListener("click", () => {
-    let next = heroIndex + 1;
-    if (next >= heroSlides.length) next = 0;
-    showHeroSlide(next);
-});
+if (nextHero && prevHero && heroSlides.length) {
+    nextHero.addEventListener("click", () => {
+        let next = heroIndex + 1;
+        if (next >= heroSlides.length) next = 0;
+        showHeroSlide(next);
+    });
 
-prevHero.addEventListener("click", () => {
-    let prev = heroIndex - 1;
-    if (prev < 0) prev = heroSlides.length - 1;
-    showHeroSlide(prev);
-});
+    prevHero.addEventListener("click", () => {
+        let prev = heroIndex - 1;
+        if (prev < 0) prev = heroSlides.length - 1;
+        showHeroSlide(prev);
+    });
+}
 
 //ABOUT SECTION
 const aboutSection = document.querySelector(".reveal-about");
@@ -35,20 +38,22 @@ const aboutBtn = document.querySelector(".reveal-btn");
 window.addEventListener("scroll", () => {
     const trigger = window.innerHeight * 0.85;
 
+    if (!aboutSection) return;
+
     if (aboutSection.getBoundingClientRect().top < trigger) {
 
         aboutSection.classList.add("active");
 
         setTimeout(() => {
-            aboutProfile.classList.add("active");
+            if (aboutProfile) aboutProfile.classList.add("active");
         }, 200);
 
         setTimeout(() => {
-            aboutText.classList.add("active");
+            if (aboutText) aboutText.classList.add("active");
         }, 400);
 
         setTimeout(() => {
-            aboutBtn.classList.add("active");
+            if (aboutBtn) aboutBtn.classList.add("active");
         }, 600);
     }
 });
@@ -115,6 +120,8 @@ const workTitle = document.querySelector(".work-title");
 
 window.addEventListener("scroll", () => {
 
+    if (!workTitle) return;
+
     const elementTop = workTitle.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
@@ -133,19 +140,22 @@ const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
 
 function showSlide(i) {
+    if (!slides.length) return;
     slides.forEach(slide => slide.classList.remove("active"));
     slides[i].classList.add("active");
 }
 
-nextBtn.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-});
+if (nextBtn && prevBtn && slides.length) {
+    nextBtn.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    });
 
-prevBtn.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-});
+    prevBtn.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+    });
+}
 
 const scrollAnimations = document.querySelectorAll(".reveal-up");
 
@@ -482,6 +492,8 @@ const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", function () {
 
+    if (!scrollBtn) return;
+
     if (window.scrollY > 300) {
         scrollBtn.style.display = "block";
     } else {
@@ -490,30 +502,46 @@ window.addEventListener("scroll", function () {
 
 });
 
-scrollBtn.addEventListener("click", function () {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+if (scrollBtn) {
+    scrollBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
-
-});
+}
 
 /* DARK MODE */
 
 const themeToggle = document.getElementById("theme-toggle");
 
-themeToggle.addEventListener("click", () => {
+function updateThemeIcon() {
+    const themeIcon = themeToggle ? themeToggle.querySelector("i") : null;
+    const themeIconMobile = themeToggleMobile ? themeToggleMobile.querySelector("i") : null;
+    const isDark = document.body.classList.contains("dark-mode");
 
-    document.body.classList.toggle("dark-mode");
+    [themeIcon, themeIconMobile].forEach(icon => {
+        if (!icon) return;
+        icon.classList.toggle("fa-moon", !isDark);
+        icon.classList.toggle("fa-sun", isDark);
+    });
+}
 
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
 
-});
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+
+        updateThemeIcon();
+
+    });
+}
 
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
@@ -523,23 +551,25 @@ if (localStorage.getItem("theme") === "dark") {
 
 const rtlToggle = document.getElementById("rtl-toggle");
 
-rtlToggle.addEventListener("click", () => {
+if (rtlToggle) {
+    rtlToggle.addEventListener("click", () => {
 
-    const html = document.documentElement;
+        const html = document.documentElement;
 
-    if (html.getAttribute("dir") === "rtl") {
-        html.setAttribute("dir", "ltr");
-        localStorage.setItem("direction", "ltr");
-        location.reload();
-    }
-    else {
-        html.setAttribute("dir", "rtl");
-        localStorage.setItem("direction", "rtl");
-        reverseText();
-        updateHeroText();
-    }
+        if (html.getAttribute("dir") === "rtl") {
+            html.setAttribute("dir", "ltr");
+            localStorage.setItem("direction", "ltr");
+            location.reload();
+        }
+        else {
+            html.setAttribute("dir", "rtl");
+            localStorage.setItem("direction", "rtl");
+            reverseText();
+            updateHeroText();
+        }
 
-});
+    });
+}
 
 function updateHeroText() {
 
@@ -548,6 +578,8 @@ function updateHeroText() {
     const letsbe = document.querySelectorAll(".letsbe");
     const creative = document.querySelectorAll(".creative");
     const heroSub = document.querySelectorAll(".hero-sub");
+
+    if (letsbe.length < 3 || creative.length < 3 || heroSub.length < 3) return;
 
     if (html.getAttribute("dir") === "rtl") {
 
@@ -583,12 +615,21 @@ function updateHeroText() {
 
 function reverseText() {
 
-    const elements = document.querySelectorAll("h1, h2, h3, h4, p");
+    const elements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, a, button, label, span, th, td");
 
     elements.forEach(el => {
 
-        const words = el.textContent.trim().split(" ");
-        el.textContent = words.reverse().join(" ");
+        el.childNodes.forEach(node => {
+            if (node.nodeType !== Node.TEXT_NODE) return;
+
+            const text = node.textContent;
+            const trimmed = text.trim();
+            if (!trimmed) return;
+
+            const leading = text.match(/^\s*/)[0];
+            const trailing = text.match(/\s*$/)[0];
+            node.textContent = leading + trimmed.split(" ").reverse().join(" ") + trailing;
+        });
 
     });
 
@@ -626,7 +667,8 @@ window.addEventListener("scroll", function () {
 
     const scrollPercent = (scrollTop / height) * 100;
 
-    document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+    const progress = document.querySelector(".scroll-progress");
+    if (progress) progress.style.width = scrollPercent + "%";
 
 });
 
@@ -635,52 +677,60 @@ window.addEventListener("scroll", function () {
 const toggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".mobile-menu");
 
-toggle.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-});
+if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    });
+}
 
 
 //Dark Mode for responsive
 
 const themeToggleMobile = document.getElementById("theme-toggle-mobile");
 
-themeToggleMobile.addEventListener("click", () => {
+if (themeToggleMobile) {
+    themeToggleMobile.addEventListener("click", () => {
 
-    document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("dark-mode");
 
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
 
-});
+    });
+}
 
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
 }
 
+updateThemeIcon();
+
 //RTL mode for responsive
 
 const rtlToggleMobile = document.getElementById("rtl-toggle-mobile");
 
-rtlToggleMobile.addEventListener("click", () => {
+if (rtlToggleMobile) {
+    rtlToggleMobile.addEventListener("click", () => {
 
-    const html = document.documentElement;
+        const html = document.documentElement;
 
-    if (html.getAttribute("dir") === "rtl") {
-        html.setAttribute("dir", "ltr");
-        localStorage.setItem("direction", "ltr");
-        location.reload();
-    }
-    else {
-        html.setAttribute("dir", "rtl");
-        localStorage.setItem("direction", "rtl");
-        reverseText();
-        updateHeroText();
-    }
+        if (html.getAttribute("dir") === "rtl") {
+            html.setAttribute("dir", "ltr");
+            localStorage.setItem("direction", "ltr");
+            location.reload();
+        }
+        else {
+            html.setAttribute("dir", "rtl");
+            localStorage.setItem("direction", "rtl");
+            reverseText();
+            updateHeroText();
+        }
 
-});
+    });
+}
 
 function updateHeroText() {
 
@@ -689,6 +739,8 @@ function updateHeroText() {
     const letsbe = document.querySelectorAll(".letsbe");
     const creative = document.querySelectorAll(".creative");
     const heroSub = document.querySelectorAll(".hero-sub");
+
+    if (letsbe.length < 3 || creative.length < 3 || heroSub.length < 3) return;
 
     if (html.getAttribute("dir") === "rtl") {
 
@@ -724,12 +776,21 @@ function updateHeroText() {
 
 function reverseText() {
 
-    const elements = document.querySelectorAll("h1, h2, h3, h4, p");
+    const elements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, a, button, label, span, th, td");
 
     elements.forEach(el => {
 
-        const words = el.textContent.trim().split(" ");
-        el.textContent = words.reverse().join(" ");
+        el.childNodes.forEach(node => {
+            if (node.nodeType !== Node.TEXT_NODE) return;
+
+            const text = node.textContent;
+            const trimmed = text.trim();
+            if (!trimmed) return;
+
+            const leading = text.match(/^\s*/)[0];
+            const trailing = text.match(/\s*$/)[0];
+            node.textContent = leading + trimmed.split(" ").reverse().join(" ") + trailing;
+        });
 
     });
 
